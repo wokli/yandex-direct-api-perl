@@ -1,0 +1,44 @@
+Yandex-DirectAPI version 0.01
+=============================
+
+Perl wrapper for Yandex.Direct API.
+Not for production! Read the source.
+
+USAGE
+my $api = new Yandex::DirectAPI("token" => $token, "login" => $login);
+
+#see documentation Yandex.Direct for methods and output values
+
+my $campaigns = $api -> get_active_campaigns([$login]);
+my $banners = $api -> get_banners([@campaign_ids]);
+my $banners_stat = $api -> get_banners_stat(YYYY-MM-DD, YYYY-MM-DD, CAMPAIGN_ID);
+
+# error handling:
+unless($campaigns) {
+	warn $api -> get_error();
+}
+
+INSTALLATION
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  LWP::UserAgent > 6.05
+  JSON
+  DateTime for tests
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2014 by alexn
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.14.2 or,
+at your option, any later version of Perl 5 you may have available.
+
+

@@ -1,0 +1,6 @@
+Revision history for Perl extension Yandex::DirectAPI.
+
+0.01  Thu Jan 30 17:56:55 2014
+	- original version; created by h2xs 1.23 with options
+		-AX -n Yandex::DirectAPI -b 5.14.2 -v 0.01
+
